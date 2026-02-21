@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    DOCKER_HUB_USER = 'ramanijadala'       
+    DOCKER_HUB_USER = 'ranjireddy041'       
     IMAGE_BASE = 'todo-app'
     IMAGE_TAG = "build-${BUILD_NUMBER}"
     LOCAL_IMAGE = "${IMAGE_BASE}:${IMAGE_TAG}"
@@ -14,7 +14,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/jadalaramani/todo_cicd_end-end_project.git'
+        git branch: 'main', url: 'https://github.com/ranjireddy041/todo_cicd_end-end_project.git'
       }
     }
 
@@ -120,7 +120,7 @@ stage('eks deploy'){
     emailext (
                subject: "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
                body: "Build details: ${env.BUILD_URL}",
-                to: 'mindcircuit2025@gmail.com',
+                to: 'ranjeethreddy.devops@gmail.com',
                 from: 'jenkins@example.com',
                 replyTo: 'jenkins@example.com',
                 
